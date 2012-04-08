@@ -25,12 +25,3 @@ end
 post '/hello' do
   erb:index
 end
-
-=begin
-post '/hello' do
-  erb %{
-    <p>おまえが<%= h params[:name] %>か… </p>
-    <a href='/'>戻る</a>
-  }
-end
-=end
