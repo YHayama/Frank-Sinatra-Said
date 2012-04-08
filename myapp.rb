@@ -14,7 +14,7 @@ get '/' do
   erb %{
     <p>あなたの名前は？</p>
     <form action='/hello' method='POST'>
-    <input type='text' name='name'>
+    <input type='text' @name='name'>
     <br>
     <input type='submit' value='送信'>
     </form>
