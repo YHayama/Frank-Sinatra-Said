@@ -10,11 +10,12 @@ template :layout do
   "<html><body><h1>Hello World</h1><%= yield %></body></html>"
 end
 
+
 get '/' do
   erb %{
     <p>あなたの名前は？</p>
     <form action='/hello' method='POST'>
-    <input type='text' @name='name'>
+    <input type='text' name='name'>
     <br>
     <input type='submit' value='送信'>
     </form>
@@ -22,5 +23,14 @@ get '/' do
 end
 
 post '/hello' do
-  erb :index
+  erb:index
 end
+
+=begin
+post '/hello' do
+  erb %{
+    <p>おまえが<%= h params[:name] %>か… </p>
+    <a href='/'>戻る</a>
+  }
+end
+=end
