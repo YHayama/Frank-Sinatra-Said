@@ -13,8 +13,16 @@ end
 
 get '/' do
   erb %{
-    <p>あなたの名前は？</p>
-    <form action='/hello' method='POST'>
+    <p>hありの入力欄</p>
+    <form action='/test1' method='POST'>
+    <input type='text' name='name'>
+    <br>
+    <input type='submit' value='送信'>
+    </form>
+    <br>
+    <br>
+    <p>hなしの入力欄</p>
+    <form action='/test2' method='POST'>
     <input type='text' name='name'>
     <br>
     <input type='submit' value='送信'>
@@ -22,6 +30,9 @@ get '/' do
   }
 end
 
-post '/hello' do
-  erb:index
+post '/test1' do
+  erb:test1
+end
+post '/test2' do
+  erb:test2
 end
