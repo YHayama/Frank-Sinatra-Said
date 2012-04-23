@@ -1,0 +1,14 @@
+<% this_year=2012 %>
+<% mymonth=(params[:name].chomp).to_i %>
+<% first_day=Date.new(this_year,mymonth,1) %>
+<% last_day=Date.new(this_year,mymonth,-1) %>
+<%= print("-------", mymonth, "-------\n") %>
+<%(first_day..last_day).each do |day|%>
+<%if (day.day%7) == 0 then%>
+<%= day.day %><br>
+<%elsif (day.day%7) == 1 then%>
+<%= day.day %>
+<%else %>
+<%= day.day%>
+<% end %>
+<% end %>
