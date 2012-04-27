@@ -2,13 +2,19 @@
 <% mymonth=(params[:name].chomp).to_i %>
 <% first_day=Date.new(this_year,mymonth,1) %>
 <% last_day=Date.new(this_year,mymonth,-1) %>
-<%= print("-------", mymonth, "-------\n") %>
-<%(first_day..last_day).each do |day|%>
-<%if (day.day%7) == 0 then%>
-<%= day.day %><br>
-<%elsif (day.day%7) == 1 then%>
-<%= day.day %>
-<%else %>
-<%= day.day%>
+<table border=2 width=250 align=left>
+<tr>
+<th><p><%= mymonth %></p></th>
+<tr>
+<%(first_day..last_day).each do |day| %>
+<%if (day.day%7) == 0 then %>
+<th><%= day.day %></th>
+</tr>
+<%elsif (day.day%7) == 1 then %>
+<th><%= day.day %></th>
+<% else %>
+<th><%= day.day%></th>
 <% end %>
 <% end %>
+</tr>
+</table>
